@@ -4,7 +4,6 @@ eps8266 and max7219 / 8x8 LED based wifi and mqtt display with responsive web UI
 ![Screenshot](wifidisplay.jpg)
 
 ## platformio
-
   check `platformio.ini`  for settings
 
 ## Arduino Settings:
@@ -15,7 +14,7 @@ eps8266 and max7219 / 8x8 LED based wifi and mqtt display with responsive web UI
     Update: 12.09.2020	// neues WebUI inkl. config, settings, ...
 
 ## Mosquitto
-    mosquitto_pub -q 2 -h 192.168.2.222 -u dirk -P **** -t "smarthome/infodisplay/message" -m "test"
+   ` mosquitto_pub -q 2 -h 192.168.2.222 -u dirk -P **** -t "smarthome/infodisplay/message" -m "test"`
 
 ## Required libs
     Max72xxPanel
@@ -34,29 +33,32 @@ eps8266 and max7219 / 8x8 LED based wifi and mqtt display with responsive web UI
         --> https://github.com/PaulStoffregen/Time    
 
 ## connecting the DOT Matix
-* DOT Matrix:       ESP8266 NodeMCU:
-* VCC               5V (VUSB)
-* GND               GND
-* DIN               D7 (GPIO13)
-* CS                D3 (GPIO0)
-* CLK               D5 (GPIO14)
-* DIM LDR           A0
+
+| DOT Matrix | ESP8266 / NodeMCU | 
+| ---- |  ----- | 
+| VCC    |            5V (VUSB) | 
+| GND      |          GND | 
+| DIN        |        D7 (GPIO13) | 
+| CS           |      D3 (GPIO0) |  
+| CLK            |    D5 (GPIO14) | 
+| DIM LDR          |  A0 | 
 
 ## homebridge configuration
-https://homebridge.io
+* https://homebridge.io
+* https://www.npmjs.com/package/homebridge-http-lightbulb 
 
 ```	
-    {
-		"accessory": "HTTP-LIGHTBULB",
-		"name": "display",
-		"onUrl": "http://192.168.2.102/on",
-		"offUrl": "http://192.168.2.102/off",
-		"statusUrl": "http://192.168.2.102/state",
-		"brightness": {
-			"setUrl": "http://192.168.2.102/brightness?value=%s",
-			"statusUrl": "http://192.168.2.102/brightness"
-		}
+{
+	"accessory": "HTTP-LIGHTBULB",
+	"name": "display",
+	"onUrl": "http://192.168.2.102/on",
+	"offUrl": "http://192.168.2.102/off",
+	"statusUrl": "http://192.168.2.102/state",
+	"brightness": {
+		"setUrl": "http://192.168.2.102/brightness?value=%s",
+		"statusUrl": "http://192.168.2.102/brightness"
 	}
+}
 ```    
 
 ## housing / 3d print
@@ -75,13 +77,13 @@ http://www.thingiverse.com/thing:3154164
 *   https://github.com/Qrome/marquee-scroller
 *   https://www.mikrocontroller.net/attachment/highlight/389184
 *   https://forum.mysensors.org/topic/1976/scrolling-text-sensor-node-with-new-v_text/2
-*   https://playground.arduino.cc/Main/Utf8ascii/         funktioniert nicht wirklich
-*   https://forum.arduino.cc/index.php?topic=171056.975   andere Library
-*   https://blog.thesen.eu/   lokale-uhrzeit-mit-dem-esp8266-und-einem-ntp-zeitserver-inklusive-sommerwinterzeit/
- *  https://tttapa.github.io/ESP8266/Chap09%20-%20Web%20Server.html
- * 	https://ullisroboterseite.de/esp8266-webserver-klasse.html
- * 	https://git.hacknology.de/wolfgang/CucooLixe/src/branch/master/src/main.cpp
- * 	https://esp32.com/viewtopic.php?t=9783
- * 	https://forum.arduino.cc/index.php?topic=484418.0
- *  https://github.com/lorol/ESPAsyncWebServer/blob/master/examples/SmartSwitch/SmartSwitch.ino
+*   https://playground.arduino.cc/Main/Utf8ascii/ 
+*   https://forum.arduino.cc/index.php?topic=171056.975
+*   https://blog.thesen.eu/lokale-uhrzeit-mit-dem-esp8266-und-einem-ntp-zeitserver-inklusive-sommerwinterzeit/
+*   https://tttapa.github.io/ESP8266/Chap09%20-%20Web%20Server.html
+*   https://ullisroboterseite.de/esp8266-webserver-klasse.html
+*   https://git.hacknology.de/wolfgang/CucooLixe/src/branch/master/src/main.cpp
+*   https://esp32.com/viewtopic.php?t=9783
+*   https://forum.arduino.cc/index.php?topic=484418.0
+*   https://github.com/lorol/ESPAsyncWebServer/blob/master/examples/SmartSwitch/SmartSwitch.ino
 
