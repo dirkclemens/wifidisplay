@@ -12,7 +12,7 @@
     Update: 12.09.2020	// neues WebUI inkl. config, settings, ...
 
 ## Mosquitto
-    mosquitto_pub -q 2 -h 192.168.2.222 -u dirk -P soxias -t "smarthome/infodisplay/message" -m "test"
+    mosquitto_pub -q 2 -h 192.168.2.222 -u dirk -P ***** -t "smarthome/infodisplay/message" -m "test"
 
 ## Required libs
     Max72xxPanel
