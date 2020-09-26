@@ -1,9 +1,9 @@
 # wifidisplay
 eps8266 and max7219 / 8x8 LED based wifi and mqtt display with responsive web UI 
 
-<img src="wifidisplay.jpg" height="300">    
+<img src="wifidisplay.jpg" width="500">    
 
-<img src="img/ui_home.png" height="250"><img src="img/ui_stats.png" height="250"><img src="img/ui_settings.png" height="250">
+<img src="img/ui_home.png" width="300"><img src="img/ui_stats.png" width="300"><img src="img/ui_settings.png" width="300">
 
 ## platformio
   check `platformio.ini`  for settings
